@@ -65,10 +65,8 @@ export class TableData extends Component {
     }
 
     async populateWeatherData() {
-        const response2 = await fetch('api/SampleData/SQLWeatherForecasts');
-        console.log(response2);
-        const data2 = await response2.json();
-        console.log(data2);
-        this.setState({ forecasts: data2, loading: false });
+        const response = await fetch('api/SampleData/SQLWeatherForecasts');
+        const data = await response.json();
+        this.setState({ forecasts: data, loading: false });
     }
 }

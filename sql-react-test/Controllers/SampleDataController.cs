@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using sql_react_test.Core;
+using System.Text.Json.Serialization;
+using System.Web;
 
 namespace sql_react_test.Controllers
 {
@@ -17,6 +19,7 @@ namespace sql_react_test.Controllers
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
+        WeatherForecast weather;
         public SampleDataController(SQLWeatherForecastData data)
         {
             this.data = data;
@@ -47,7 +50,18 @@ namespace sql_react_test.Controllers
             
 
         }
+        [HttpPut("[action]/{weatherJSON}")]
+        public void SQLWeatherForecastsAdd(string weatherJSON)
+        {
+            weatherJSON=Uri.UnescapeDataString(weatherJSON);
+            this.weather= JsonSerializer.Parse<WeatherForecast>(weatherJSON);
+            WeatherForecast weatherData = new WeatherForecast();
+            weatherData.DateFormatted = this.weather.DateFormatted;
+            weatherData.TemperatureC = this.weather.TemperatureC;
+            weatherData.Summary = this.weather.Summary;
+            data.AddWeather(weatherData);
 
+        }
 
 
     }

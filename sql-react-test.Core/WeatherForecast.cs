@@ -6,6 +6,7 @@ namespace sql_react_test.Core
 {
     public class WeatherForecast
     {
+
         public int Id { get; set; }
         public string DateFormatted { get; set; }
         public int TemperatureC { get; set; }

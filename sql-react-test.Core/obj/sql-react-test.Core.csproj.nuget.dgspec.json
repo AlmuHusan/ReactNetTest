@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\dotNet\\sql-react-test.Core\\sql-react-test.Core.csproj": {}
+    "C:\\dotNet\\reactNet\\ReactNetTest\\sql-react-test.Core\\sql-react-test.Core.csproj": {}
   },
   "projects": {
-    "C:\\dotNet\\sql-react-test.Core\\sql-react-test.Core.csproj": {
+    "C:\\dotNet\\reactNet\\ReactNetTest\\sql-react-test.Core\\sql-react-test.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\dotNet\\sql-react-test.Core\\sql-react-test.Core.csproj",
+        "projectUniqueName": "C:\\dotNet\\reactNet\\ReactNetTest\\sql-react-test.Core\\sql-react-test.Core.csproj",
         "projectName": "sql-react-test.Core",
-        "projectPath": "C:\\dotNet\\sql-react-test.Core\\sql-react-test.Core.csproj",
+        "projectPath": "C:\\dotNet\\reactNet\\ReactNetTest\\sql-react-test.Core\\sql-react-test.Core.csproj",
         "packagesPath": "C:\\Users\\halmusawi\\.nuget\\packages\\",
-        "outputPath": "C:\\dotNet\\sql-react-test.Core\\obj\\",
+        "outputPath": "C:\\dotNet\\reactNet\\ReactNetTest\\sql-react-test.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
