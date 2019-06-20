@@ -5,8 +5,10 @@ import { Home } from './components/Home';
 import { FetchData } from './components/FetchData';
 import { Counter } from './components/Counter';
 import { TableData } from './components/TableData';
-import  Add  from './components/Add';
-export default class App extends Component {
+import Add from './components/Add';
+import { withRouter } from "react-router-dom";
+
+class App extends Component {
   static displayName = App.name;
 
   render () {
@@ -21,3 +23,4 @@ export default class App extends Component {
     );
   }
 }
+export default withRouter((App));

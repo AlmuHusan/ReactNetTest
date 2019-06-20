@@ -15,7 +15,7 @@ export class TableData extends Component {
     deleteId = async (id) => {
      
         await axios.put(`api/SampleData/SQLWeatherForecastsDelete/${id}`);
-        window.location.reload();
+        await this.populateWeatherData();
 
     }
 
