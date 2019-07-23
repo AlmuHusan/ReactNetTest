@@ -15,7 +15,10 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-
+- task: NodeTool@0
+  inputs:
+    versionSpec: '10.x'
+  displayName: 'Install Node.js'
 - task: DotNetCoreInstaller@0
   displayName: 'Install .net core 3.0 (preview)'
   inputs:
