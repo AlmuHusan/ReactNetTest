@@ -13,6 +13,7 @@ export class Counter extends Component {
     this.setState({
       currentCount: this.state.currentCount + 1
     });
+      this.props.onChange && this.props.onChange(this.state.currentCount)
   }
 
   render () {

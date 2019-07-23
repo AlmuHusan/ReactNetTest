@@ -29,10 +29,7 @@ fffffffffffffffffffggggggggggggggggggggjjjjjjjjjjjjjjaaaaaaaaaaaaaaaaaaad"%7D`);
     }
 
     isTempValid(number) {
-        if (!isNaN(number)) {
-            return true;
-        }
-        return false
+        return !isNaN(number);
     }
 
     onFormChange(event) {
@@ -61,7 +58,7 @@ fffffffffffffffffffggggggggggggggggggggjjjjjjjjjjjjjjaaaaaaaaaaaaaaaaaaad"%7D`);
                     <input type="text" name="summary" maxLength="30" ></input>
                     <br />
                     {!this.state.validTemp ? <div className="text-danger">WARNING: Your input is currently not valid</div>:<div/>}
-                    <button type="submit" valid={`${this.state.validForm}`} className="btn btn-primary ">Create!</button>
+                    <button type="submit" valid={`${this.state.validTemp}`} className="btn btn-primary ">Create!</button>
 
                 </form>
             </div>

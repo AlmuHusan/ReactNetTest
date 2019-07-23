@@ -2,8 +2,8 @@
   "runtimeOptions": {
     "tfm": "netcoreapp3.0",
     "framework": {
-      "name": "Microsoft.NETCore.App",
-      "version": "3.0.0-preview5-27626-15"
+      "name": "Microsoft.AspNetCore.App",
+      "version": "3.0.0-preview6.19307.2"
     }
   }
 }

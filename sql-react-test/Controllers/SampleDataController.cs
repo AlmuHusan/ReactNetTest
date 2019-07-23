@@ -67,7 +67,7 @@ namespace sql_react_test.Controllers
                     data.AddWeather(weatherData);
                 }
             }
-            catch(Exception e)
+            catch
             {
 
             }

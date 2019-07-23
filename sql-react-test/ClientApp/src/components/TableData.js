@@ -1,6 +1,23 @@
 ﻿import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+
+
+const deleteForecast = ({ id }) => axios.put(`api/SampleData/SQLWeatherForecastsDelete/${id}`);
+const getForecasts = () => axios.get('api/SampleData/SQLWeatherForecasts');
+
+
+export function LiveTableData(props) {
+    return (
+        <TableData
+            // [See](https://zhenyong.github.io/react/docs/transferring-props.html)
+            {...props}
+            onDelete={deleteForecast}
+            getForecasts={getForecasts}
+        />
+    );
+}
+
 export class TableData extends Component {
     static displayName = TableData.name;
     
@@ -14,7 +31,7 @@ export class TableData extends Component {
     }
     deleteId = async (id) => {
      
-        await axios.put(`api/SampleData/SQLWeatherForecastsDelete/${id}`);
+        await this.props.onDelete({ id });
         await this.populateWeatherData();
 
     }
@@ -23,7 +40,7 @@ export class TableData extends Component {
         
         return (
             <div>
-                <Link to="/add" style={{spacing:"10px"}}className="btn btn-primary">Add</Link>
+                <Link to="/add" style={{stdhrfd:"500px"}}className="btn btn-primary">Add</Link>
                 
             <table className='table table-striped'>
                 <thead>
@@ -65,8 +82,7 @@ export class TableData extends Component {
     }
 
     async populateWeatherData() {
-        const response = await fetch('api/SampleData/SQLWeatherForecasts');
-        const data = await response.json();
+        const { data } = await this.props.getForecasts();
         this.setState({ forecasts: data, loading: false });
     }
 }
