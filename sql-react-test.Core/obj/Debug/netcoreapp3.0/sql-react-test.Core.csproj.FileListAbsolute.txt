@@ -14,9 +14,9 @@ C:\dotNet\reactNet\ReactNetTest\sql-react-test.Core\bin\Debug\netcoreapp3.0\sql-
 C:\dotNet\reactNet\ReactNetTest\sql-react-test.Core\bin\Debug\netcoreapp3.0\sql-react-test.Core.runtimeconfig.dev.json
 C:\dotNet\reactNet\ReactNetTest\sql-react-test.Core\bin\Debug\netcoreapp3.0\sql-react-test.Core.dll
 C:\dotNet\reactNet\ReactNetTest\sql-react-test.Core\bin\Debug\netcoreapp3.0\sql-react-test.Core.pdb
-C:\dotNet\reactNet\ReactNetTest\sql-react-test.Core\obj\Debug\netcoreapp3.0\sql-react-test.Core.csprojAssemblyReference.cache
 C:\dotNet\reactNet\ReactNetTest\sql-react-test.Core\obj\Debug\netcoreapp3.0\sql-react-test.Core.csproj.CoreCompileInputs.cache
 C:\dotNet\reactNet\ReactNetTest\sql-react-test.Core\obj\Debug\netcoreapp3.0\sql-react-test.Core.AssemblyInfoInputs.cache
 C:\dotNet\reactNet\ReactNetTest\sql-react-test.Core\obj\Debug\netcoreapp3.0\sql-react-test.Core.AssemblyInfo.cs
 C:\dotNet\reactNet\ReactNetTest\sql-react-test.Core\obj\Debug\netcoreapp3.0\sql-react-test.Core.dll
 C:\dotNet\reactNet\ReactNetTest\sql-react-test.Core\obj\Debug\netcoreapp3.0\sql-react-test.Core.pdb
+C:\dotNet\reactNet\ReactNetTest\sql-react-test.Core\obj\Debug\netcoreapp3.0\sql-react-test.Core.csprojAssemblyReference.cache
