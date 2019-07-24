@@ -7,37 +7,37 @@ trigger:
 - master
 
 pool:
-  vmImage: 'windows-latest'
-
+  vmImage: 'Ubuntu-16.04'
+ 
 variables:
-  solution: '**/*.sln'
-  buildPlatform: 'Any CPU'
-  buildConfiguration: 'Release'
-
+  imageName: 'reactnetdocker'
+  imageTag: '$(build.buildId)'
+  fullImageName: '$(imageName):$(imageTag)'
+  containerRegistry: 'dockertestcontainer175.azurecr.io'
+  serviceConnection: 'myDockerTestRescource'
+ 
 steps:
-- task: NodeTool@0
+- task: Docker@1
+  displayName: 'Containerize the application'
   inputs:
-    versionSpec: '10.x'
-  displayName: 'Install Node.js'
-- task: DotNetCoreInstaller@0
-  displayName: 'Install .net core 3.0 (preview)'
+    azureSubscriptionEndpoint: $(serviceConnection)
+    azureContainerRegistry: $(containerRegistry)
+    dockerFile: '**/Dockerfile'
+    imageName: '$(fullImageName)'
+    includeLatestTag: true
+ 
+- task: Docker@1
+  displayName: 'Push image'
   inputs:
-    version: '3.0.100-preview6-012264'
-
-- task: NuGetToolInstaller@1
-
-- task: NuGetCommand@2
+    azureSubscriptionEndpoint: $(serviceConnection)
+    azureContainerRegistry: $(containerRegistry)
+    command: 'Push an image'
+    imageName: '$(fullImageName)'
+ 
+- task: Docker@1
+  displayName: 'Push latest image'
   inputs:
-    restoreSolution: '$(solution)'
-
-- task: VSBuild@1
-  inputs:
-    solution: '$(solution)'
-    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" /p:DeployIisAppPath="Default Web Site"'
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
-
-- task: VSTest@2
-  inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+    azureSubscriptionEndpoint: $(serviceConnection)
+    azureContainerRegistry: $(containerRegistry)
+    command: 'Push an image'
+    imageName: '$(imageName):latest'
