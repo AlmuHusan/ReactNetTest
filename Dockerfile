@@ -8,7 +8,7 @@ FROM mcr.microsoft.com/dotnet/core/sdk:3.0-buster AS build
 RUN curl -sL https://deb.nodesource.com/setup_10.x |  bash -
 RUN apt-get install -y nodejs
 RUN apt-get install -y nuget
-
+WORKDIR /src
 
 COPY ["/sql-react-test.sln", ""]
 COPY ["/sql-react-test/sql-react-test.csproj", "./sql-react-test/"]
@@ -20,8 +20,8 @@ RUN dotnet restore "sql-react-test.Core/sql-react-test.Core.csproj"
 
 COPY . .
 WORKDIR "/src/"
-RUN dotnet build "sql-react-test.csproj" -c Release -o /app
-RUN dotnet build "sql-react-test.Core.csproj" -c Release -o /app
+RUN dotnet build "sql-react-test/sql-react-test.csproj" -c Release -o /app
+RUN dotnet build "sql-react-test.Core/sql-react-test.Core.csproj" -c Release -o /app
 RUN dotnet build "sql-react-test.sln" -c Release -o /app
 
 WORKDIR /src/
