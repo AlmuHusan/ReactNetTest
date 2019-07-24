@@ -10,13 +10,11 @@ RUN apt-get install -y nodejs
 RUN apt-get install -y mono-complete
 RUN curl -sLo /usr/local/bin/nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
 
-WORKDIR /src
-RUN chown newuser 
-USER newuser
+
 COPY ["/sql-react-test.sln", ""]
 COPY ["/sql-react-test/sql-react-test.csproj", "./sql-react-test/"]
 COPY ["/sql-react-test.Core/sql-react-test.Core.csproj", "./sql-react-test.Core/"]
-RUN nuget.exe restore "/sql-react-test.sln" -SolutionDirectory ../ -Verbosity normal
+RUN nuget restore "/sql-react-test.sln" -SolutionDirectory ../ -Verbosity normal
 RUN dotnet restore "sql-react-test/sql-react-test.csproj"
 RUN dotnet restore "sql-react-test.Core/sql-react-test.Core.csproj"
 
