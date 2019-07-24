@@ -5,10 +5,11 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.0-buster AS build
 
+WORKDIR /src
 RUN curl -sL https://deb.nodesource.com/setup_10.x |  bash -
 RUN apt-get install -y nodejs
 RUN apt-get install -y nuget
-WORKDIR /src
+
 
 COPY ["/sql-react-test.sln", ""]
 COPY ["/sql-react-test/sql-react-test.csproj", "./sql-react-test/"]
