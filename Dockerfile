@@ -11,7 +11,7 @@ RUN apt-get install -y mono-complete
 RUN curl -sLo /usr/local/bin/nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
 
 WORKDIR /src
-RUN chown newuser /src
+RUN chown newuser 
 USER newuser
 COPY ["/sql-react-test.sln", ""]
 COPY ["/sql-react-test/sql-react-test.csproj", "./sql-react-test/"]
