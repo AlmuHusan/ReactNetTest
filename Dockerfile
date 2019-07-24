@@ -8,26 +8,31 @@ FROM mcr.microsoft.com/dotnet/core/sdk:3.0-buster AS build
 WORKDIR /src
 RUN curl -sL https://deb.nodesource.com/setup_10.x |  bash -
 RUN apt-get install -y nodejs
-RUN apt-get install -y nuget
+
 
 
 COPY ["/sql-react-test.sln", ""]
 COPY ["/sql-react-test/sql-react-test.csproj", "./sql-react-test/"]
 COPY ["/sql-react-test.Core/sql-react-test.Core.csproj", "./sql-react-test.Core/"]
-RUN nuget restore "/sql-react-test.sln"
 RUN dotnet restore "sql-react-test/sql-react-test.csproj"
 RUN dotnet restore "sql-react-test.Core/sql-react-test.Core.csproj"
+RUN dotnet restore "sql-react-test.sln"
 
 
 COPY . .
-WORKDIR "/src/"
-RUN dotnet build "sql-react-test/sql-react-test.csproj" -c Release -o /app
-RUN dotnet build "sql-react-test.Core/sql-react-test.Core.csproj" -c Release -o /app
+
+WORKDIR /src/sql-react-test
+RUN dotnet build -c Release -o /app
+
+WORKDIR /src/sql-react-test.Core
+RUN dotnet build -c Release -o /app
+
+WORKDIR /src
 RUN dotnet build "sql-react-test.sln" -c Release -o /app
 
 WORKDIR /src/
 FROM build AS publish
-RUN dotnet publish "/sql-react-test.sln" -c Release -o /app
+RUN dotnet publish -c Release -o /app
 
 FROM base AS final
 WORKDIR /app
