@@ -11,6 +11,7 @@ RUN apt-get install -y mono-complete
 RUN curl -sLo /usr/local/bin/nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
 
 WORKDIR /src
+USER admin
 COPY ["/sql-react-test.sln", ""]
 COPY ["/sql-react-test/sql-react-test.csproj", "./sql-react-test/"]
 COPY ["/sql-react-test.Core/sql-react-test.Core.csproj", "./sql-react-test.Core/"]
