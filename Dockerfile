@@ -7,8 +7,7 @@ FROM mcr.microsoft.com/dotnet/core/sdk:3.0-buster AS build
 
 RUN curl -sL https://deb.nodesource.com/setup_10.x |  bash -
 RUN apt-get install -y nodejs
-RUN apt-get install -y mono-complete
-RUN curl -sLo /usr/local/bin/nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
+RUN apt-get install nuget
 
 
 COPY ["/sql-react-test.sln", ""]
