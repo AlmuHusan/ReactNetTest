@@ -13,7 +13,7 @@ RUN apt-get install -y nuget
 COPY ["/sql-react-test.sln", ""]
 COPY ["/sql-react-test/sql-react-test.csproj", "./sql-react-test/"]
 COPY ["/sql-react-test.Core/sql-react-test.Core.csproj", "./sql-react-test.Core/"]
-RUN nuget restore "/sql-react-test.sln" -SolutionDirectory ../ -Verbosity normal
+RUN nuget restore "/sql-react-test.sln"
 RUN dotnet restore "sql-react-test/sql-react-test.csproj"
 RUN dotnet restore "sql-react-test.Core/sql-react-test.Core.csproj"
 
