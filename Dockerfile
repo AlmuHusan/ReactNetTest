@@ -20,8 +20,8 @@ RUN dotnet restore "sql-react-test.Core/sql-react-test.Core.csproj"
 
 COPY . .
 WORKDIR "/src/"
-RUN dotnet build "sql-react-test/sql-react-test.csproj" -c Release -o /app
-RUN dotnet build "sql-react-test.Core/sql-react-test.Core.csproj" -c Release -o /app
+RUN dotnet build "sql-react-test.csproj" -c Release -o /app
+RUN dotnet build "sql-react-test.Core.csproj" -c Release -o /app
 RUN dotnet build "sql-react-test.sln" -c Release -o /app
 
 WORKDIR /src/
