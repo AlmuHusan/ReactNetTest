@@ -22,11 +22,7 @@ RUN dotnet restore "sql-react-test.sln"
 
 COPY . .
 
-WORKDIR /src/sql-react-test
-RUN dotnet build -c Release -o /app
 
-WORKDIR /src/sql-react-test.Core
-RUN dotnet build -c Release -o /app
 
 WORKDIR /src
 RUN dotnet build "sql-react-test.sln" -c Release -o /app
