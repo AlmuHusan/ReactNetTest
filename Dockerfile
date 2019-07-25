@@ -8,7 +8,9 @@ FROM mcr.microsoft.com/dotnet/core/sdk:3.0-buster AS build
 WORKDIR /src
 RUN curl -sL https://deb.nodesource.com/setup_10.x |  bash -
 RUN apt-get install -y nodejs
-
+RUN apt-get -y clean
+RUN apt-get -y update
+RUN apt-get install -y nuget
 
 
 COPY ["/sql-react-test.sln", ""]
