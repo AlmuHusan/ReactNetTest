@@ -11,3 +11,7 @@ it('renders without crashing', async () => {
     </MemoryRouter>, div);
   await new Promise(resolve => setTimeout(resolve, 1000));
 });
+
+it('hey jimbo',  () => {
+  expect(1).toBe(1);
+});
