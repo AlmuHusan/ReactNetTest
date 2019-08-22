@@ -22,9 +22,8 @@ export default class Add extends Component {
         var weatherJSON = JSON.stringify(weather);
         weatherJSON=encodeURIComponent(weatherJSON)
         //console.log( (weatherJSON));
-        await axios.put(`api/SampleData/SQLWeatherForecastsAdd/${weatherJSON}`);
-        await axios.put(`api/SampleData/SQLWeatherForecastsAdd/%7B"DateFormatted"%3A"1%2F21%2F19"%2C"TemperatureC"%3A23A%2C"Summary"%3A"Coldddddddddddddddddddddssssssss
-fffffffffffffffffffggggggggggggggggggggjjjjjjjjjjjjjjaaaaaaaaaaaaaaaaaaad"%7D`);
+        await axios.put(`api/SampleData/SQLWeatherForecastsAdd`,weather);
+
         this.props.history.push('/table-data');
     }
 

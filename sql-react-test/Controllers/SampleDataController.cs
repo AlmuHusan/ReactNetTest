@@ -9,11 +9,11 @@ using System.Net;
 
 namespace sql_react_test.Controllers
 {
-    
+
     [Route("api/[controller]")]
     public partial class SampleDataController : Controller
     {
-        
+
         SQLWeatherForecastData data;
         private static string[] Summaries = new[]
         {
@@ -38,7 +38,7 @@ namespace sql_react_test.Controllers
         [HttpGet("[action]")]
         public IEnumerable<WeatherForecast> SQLWeatherForecasts()
         {
-            
+
             Console.WriteLine(data);
             return data.getList();
 
@@ -47,23 +47,23 @@ namespace sql_react_test.Controllers
         public WeatherForecast SQLWeatherForecastsDelete(int id)
         {
             return data.DeleteId(id);
-            
+
 
         }
-        [HttpPut("[action]/{weatherJSON}")]
-        public void SQLWeatherForecastsAdd(string weatherJSON)
+        [HttpPut("[action]")]
+        public void SQLWeatherForecastsAdd([FromBody] WeatherForecast weatherJSON)
         {
-            weatherJSON = Uri.UnescapeDataString(weatherJSON);
+            //weatherJSON = Uri.UnescapeDataString(weatherJSON);
             WeatherForecast weatherData = new WeatherForecast();
             try
             {
-                this.weather = JsonSerializer.Parse<WeatherForecast>(weatherJSON);
+                //this.weather = JsonSerializer.Parse<WeatherForecast>(weatherJSON);
 
-                if (this.weather.Summary.Length <= 30)
+                if (weatherJSON.Summary.Length <= 30)
                 {
-                    weatherData.DateFormatted = this.weather.DateFormatted;
-                    weatherData.TemperatureC = this.weather.TemperatureC;
-                    weatherData.Summary = this.weather.Summary;
+                    weatherData.DateFormatted = weatherJSON.DateFormatted;
+                    weatherData.TemperatureC = weatherJSON.TemperatureC;
+                    weatherData.Summary = weatherJSON.Summary;
                     data.AddWeather(weatherData);
                 }
             }

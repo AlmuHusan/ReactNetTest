@@ -604,13 +604,7 @@
           "lib/netstandard2.0/Microsoft.Net.Http.Headers.dll": {}
         }
       },
-      "Microsoft.NETCore.App/3.0.0-preview6-27804-01": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "3.0.0-preview6.19303.8"
-        }
-      },
-      "Microsoft.NETCore.Platforms/3.0.0-preview6.19303.8": {
+      "Microsoft.NETCore.Platforms/3.0.0-preview5.19224.8": {
         "type": "package",
         "compile": {
           "lib/netstandard1.0/_._": {}
@@ -1879,30 +1873,17 @@
         "microsoft.net.http.headers.nuspec"
       ]
     },
-    "Microsoft.NETCore.App/3.0.0-preview6-27804-01": {
-      "sha512": "ZusFeFw4lm4f3W1GyaTDbEdqln8N0fWFijKpykPLLvrEEsppfZwx8n/UeMm/e56QspzGHKpJfmKi4YF2Z6+G6A==",
+    "Microsoft.NETCore.Platforms/3.0.0-preview5.19224.8": {
+      "sha512": "MEt1XzSndofi4WBoGaRcMZdy9rqNtZITVZev2PTtXizcNe4csoN7U638Q73M93I/LxroBAI1IB+6HQOuklkKrw==",
       "type": "package",
-      "path": "microsoft.netcore.app/3.0.0-preview6-27804-01",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "microsoft.netcore.app.3.0.0-preview6-27804-01.nupkg.sha512",
-        "microsoft.netcore.app.nuspec"
-      ]
-    },
-    "Microsoft.NETCore.Platforms/3.0.0-preview6.19303.8": {
-      "sha512": "9nE9InmtkWL1ZIAvzZPoe8zzr8JNrmyofR5++0NCLomrLSbR70b60hLXFE/7vXIVgbKdTo3CTsCcFTOSZoOIEw==",
-      "type": "package",
-      "path": "microsoft.netcore.platforms/3.0.0-preview6.19303.8",
+      "path": "microsoft.netcore.platforms/3.0.0-preview5.19224.8",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/netstandard1.0/_._",
-        "microsoft.netcore.platforms.3.0.0-preview6.19303.8.nupkg.sha512",
+        "microsoft.netcore.platforms.3.0.0-preview5.19224.8.nupkg.sha512",
         "microsoft.netcore.platforms.nuspec",
         "runtime.json",
         "useSharedDesignerContext.txt",
@@ -4006,7 +3987,7 @@
       "Microsoft.EntityFrameworkCore >= 3.0.0-preview6.19304.10",
       "Microsoft.EntityFrameworkCore.Design >= 3.0.0-preview6.19304.10",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.0.0-preview6.19304.10",
-      "Microsoft.NETCore.App >= 3.0.0-preview6-27804-01"
+      "Microsoft.NETCore.Platforms >= 3.0.0-preview5.19224.8"
     ]
   },
   "packageFolders": {
@@ -4034,7 +4015,13 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://dotnetfeed.blob.core.windows.net/aspnet-aspnetcore-tooling/index.json": {},
+        "https://dotnetfeed.blob.core.windows.net/aspnet-aspnetcore/index.json": {},
+        "https://dotnetfeed.blob.core.windows.net/aspnet-entityframeworkcore/index.json": {},
+        "https://dotnetfeed.blob.core.windows.net/aspnet-extensions/index.json": {},
+        "https://dotnetfeed.blob.core.windows.net/dotnet-core/index.json": {},
+        "https://dotnetfeed.blob.core.windows.net/dotnet-windowsdesktop/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.0": {
@@ -4076,26 +4063,19 @@
             "target": "Package",
             "version": "[3.0.0-preview6.19304.10, )"
           },
-          "Microsoft.NETCore.App": {
-            "include": "None",
+          "Microsoft.NETCore.Platforms": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[3.0.0-preview6-27804-01, )",
+            "version": "[3.0.0-preview5.19224.8, )",
             "autoReferenced": true
           }
         },
         "imports": [
-          "net461",
-          "net462",
-          "net47",
-          "net471",
-          "net472",
-          "net48"
+          "net461"
         ],
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": [
-          "Microsoft.AspNetCore.App",
           "Microsoft.NETCore.App"
         ]
       }
