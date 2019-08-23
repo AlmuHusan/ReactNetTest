@@ -19,7 +19,6 @@ namespace sql_react_test.Controllers
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
-        WeatherForecast weather;
         public SampleDataController(SQLWeatherForecastData data)
         {
             this.data = data;
@@ -53,12 +52,9 @@ namespace sql_react_test.Controllers
         [HttpPut("[action]")]
         public void SQLWeatherForecastsAdd([FromBody] WeatherForecast weatherJSON)
         {
-            //weatherJSON = Uri.UnescapeDataString(weatherJSON);
             WeatherForecast weatherData = new WeatherForecast();
             try
             {
-                //this.weather = JsonSerializer.Parse<WeatherForecast>(weatherJSON);
-
                 if (weatherJSON.Summary.Length <= 30)
                 {
                     weatherData.DateFormatted = weatherJSON.DateFormatted;
