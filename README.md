@@ -1,2 +1,4 @@
 # ReactNetTest
-A test program m that utilizes react as a front end and dot net core as a back end
+Microsoft's React ASP.NET project template with a simple database attached to it.
+https://docs.microsoft.com/en-us/aspnet/core/client-side/spa/react?view=aspnetcore-2.2&tabs=visual-studio
+
