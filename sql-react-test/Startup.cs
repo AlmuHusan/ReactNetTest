@@ -67,7 +67,7 @@ namespace sql_react_test
 
             app.UseSpa(spa =>
             {
-                spa.Options.SourcePath = "ClientApp/build";
+                spa.Options.SourcePath = "ClientApp";
 
                 //if (env.IsDevelopment())
                 //{
