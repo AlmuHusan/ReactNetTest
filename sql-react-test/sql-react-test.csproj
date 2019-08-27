@@ -8,19 +8,12 @@
     <SpaRoot>ClientApp\</SpaRoot>
     <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
     <RootNamespace>sql_react_test</RootNamespace>
-    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-    <UserSecretsId>59d915e8-91ad-4122-b8fe-14c9bf1bcc3b</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Server.IIS" Version="2.2.6" />
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.0.0-preview6.19307.2" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.0.0-preview6.19304.10" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.0.0-preview6.19304.10">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.0.0-preview6.19304.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.0.0-preview5-19227-01" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.7.9" />
   </ItemGroup>
 

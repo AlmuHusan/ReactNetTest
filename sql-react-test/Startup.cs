@@ -25,7 +25,7 @@ namespace sql_react_test
             services.AddMvc(options => options.EnableEndpointRouting = false)
                 .AddNewtonsoftJson();
             services.AddDbContext<WeatherForecastDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("WeatherForecastOnline")));
+                options.UseSqlServer(Configuration.GetConnectionString("WeatherForecast")));
             // Automatically perform database migration
             services.BuildServiceProvider().GetService<WeatherForecastDbContext>().Database.Migrate();
             //services.AddDbContextPool<WeatherForecastDbContext>(options =>
@@ -67,12 +67,12 @@ namespace sql_react_test
 
             app.UseSpa(spa =>
             {
-                spa.Options.SourcePath = "ClientApp/build";
+                spa.Options.SourcePath = "ClientApp";
 
-                //if (env.IsDevelopment())
-                //{
-                //    spa.UseReactDevelopmentServer(npmScript: "start");
-                //}
+                if (env.IsDevelopment())
+                {
+                    spa.UseReactDevelopmentServer(npmScript: "start");
+                }
             });
         }
     }
