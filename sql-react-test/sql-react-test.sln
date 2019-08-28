@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28922.388
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "sql-react-test.Core", "sql-react-test.Core\sql-react-test.Core.csproj", "{0CAD1358-A6FE-40E3-9F39-E4D404493D21}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "sql-react-test.Core", "..\sql-react-test.Core\sql-react-test.Core.csproj", "{0CAD1358-A6FE-40E3-9F39-E4D404493D21}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "sql-react-test", "sql-react-test\sql-react-test.csproj", "{B62D5872-24FD-4D9F-B221-6CBBC71090CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "sql-react-test", "sql-react-test.csproj", "{B62D5872-24FD-4D9F-B221-6CBBC71090CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
