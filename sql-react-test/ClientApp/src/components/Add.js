@@ -21,7 +21,6 @@ export default class Add extends Component {
         }
         var weatherJSON = JSON.stringify(weather);
         weatherJSON=encodeURIComponent(weatherJSON)
-        //console.log( (weatherJSON));
         await axios.put(`api/SampleData/SQLWeatherForecastsAdd`,weather);
 
         this.props.history.push('/table-data');
@@ -33,16 +32,13 @@ export default class Add extends Component {
 
     onFormChange(event) {
         event.persist()
-        //console.log(event);
         if (event.target.name === "temp") {
-            console.log(event.target.value);
             this.setState({ validTemp: this.isTempValid(event.target.value)})
         }
     }
 
 
     render() {
-        //this.handlePasswordChange.bind(this)
         return (
             <div>
                 <h1>Add a Row</h1>

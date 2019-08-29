@@ -28,10 +28,6 @@ namespace sql_react_test
                 options.UseSqlServer(Configuration.GetConnectionString("WeatherForecastOnline")));
             // Automatically perform database migration
             services.BuildServiceProvider().GetService<WeatherForecastDbContext>().Database.Migrate();
-            //services.AddDbContextPool<WeatherForecastDbContext>(options =>
-            //{
-            //    options.UseSqlServer(Configuration.GetConnectionString("WeatherForecast"));
-            //});
             services.AddScoped<SQLWeatherForecastData>();
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

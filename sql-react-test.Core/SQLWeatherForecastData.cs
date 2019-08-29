@@ -29,7 +29,6 @@ namespace sql_react_test.Core
         }
         public void AddWeather(WeatherForecast weather)
         {
-                //weather.Id = db.WeatherForecast.Count() + 1;
                 db.WeatherForecast.Add(weather);
                 db.SaveChanges();
         }
